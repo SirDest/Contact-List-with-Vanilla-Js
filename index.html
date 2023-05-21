@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Contacts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="main">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href=""><ion-icon name="close"></ion-icon></a>
+                </li>
+                <li>
+                    <a href=""><ion-icon name="home"></ion-icon></a>
+                </li>
+                <li>
+                    <a href=""><ion-icon name="book-outline"></ion-icon></a>
+                </li>
+                <li>
+                    <a href=""><ion-icon name="mail-outline"></ion-icon></a>
+                </li>
+                <li>
+                    <a href=""><ion-icon name="settings"></ion-icon></a>
+                </li>
+            </ul>
+        </div class="sidebar">
+        <div class="bodycontent">
+            <header>
+                <!-- the header is empty -->
+            </header>
+            <!-- popup add contact -->
+            <div style="display: none;" class="getContact">
+                <div    class="contactDiv">
+                    <h1>Add Contact</h1>
+                    <form class="getContactsForm">
+                        <div class="getcontactsinputs">
+                            <div class="getInputs">
+                                <div>
+                                    <label for="firstName">First name</label>
+                                    <input type="text" id="firstName"placeholder="Enter Your First Name"name="firstName" required>
+                                </div>
+                                <div>
+                                    <label for="emailAddress">Email Address</label>
+                                    <input type="email" id="emailAddress"placeholder="Input Your Email" name="emailAddress" required>
+                                </div>
+                            </div>
+                            <div class="getInputs">
+                                <div>
+                                    <label for="lastName">Last name</label>
+                                    <input type="text" id="lastName"placeholder="Enter Your Last Name" name="lastName" required>
+                                </div>
+                                <div>
+                                    <label for="phoneNumber">Phone number</label>
+                                    <input type="number" id="phoneNumber"placeholder="Input Your Phone Number" name="phoneNumber" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonsCont">
+                            <input type="submit" value="ADD CONTACT" class="belowbuttons" id="submitbut">
+                            <input type="button" value="CANCEL" class="belowbuttons" id="cancelbut">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- main contactApp contents -->
+            <div class="bodypart">
+                <div class="logo">
+                    <img src="/phonebook.jpg" alt="PB">
+                    <div class="texts">
+                        <p>CONTACTS</p>
+                        <p>Welcome to your phonebook</p>
+                    </div>
+                </div>
+                <div class="inputpart">
+                    <form class="inputs">
+                        <input class="searchContacts" type="search" name="searchContacts" placeholder="Search Contacts...">
+                        <input class="addContacts buttons" name="addContacts" type="submit" value="+ Add Contact">
+                    </form>
+                    <div class="deletediv">
+                        <input class="delete" type="button" name="DeleteAllCheckbox" value="Delete All">
+
+                    </div>
+                </div> 
+                <div class="contactlist">
+                    <table class="listofcontacts" id="contacts">
+                        <!-- table head -->
+                        <thead>
+                            <tr class="tablehead">
+                                <th><input type="checkbox" class="selectall"></th>
+                                <th colspan="2">fullname</th>
+                                <th>email</th>
+                                <th colspan="2">phone number</th>
+                              </tr>
+                        </thead>
+                          <!-- tablebody -->
+                          <tbody class="list-contact">
+                            <!-- <tr class='contactrow'>
+                            <td><input type="checkbox" name="checkbox" id=""></td>
+                            <td>Akinro Destined</td>
+                            <td>akinro.destined@gmail.com</td>
+                            <td>08122334455</td>
+                            <td><button class="contactdelete"><ion-icon name="trash-outline"></ion-icon></button></td>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox" name="checkbox" id=""></td>
+                            <td>Akinro Destined</td>
+                            <td>akinro.destined@gmail.com</td>
+                            <td>08122334455</td>
+                            <td><button class="contactdelete"><ion-icon name="trash-outline"></ion-icon></button></td>
+                          </tr> 
+                          <tr>
+                            <td><input type="checkbox" name="checkbox" id="check"></td>
+                            <td>Akinro Destined</td>
+                            <td>akinro.destined@gmail.com</td>
+                            <td>08122334455</td>
+                            <td><button class="contactdelete"><ion-icon name="trash-outline"></ion-icon></button></td>
+                          </tr>                     -->
+                          </tbody>
+                          
+                    </table>
+                    <div class="contactdetails" style="display: none;">
+                        <div class="fullnamedetails detailsdiv">
+                            <label for=""> Last Name:</label>
+                            <input type="text" class="lastnameinputdet" placeholder="Akinro" required readonly>
+                        </div>
+                        <div class="firstnamedetails detailsdiv">
+                            <label for="">FirstName:</label>
+                            <input type="text" class="firstnameinputdet" placeholder="Merit" required readonly>
+                        </div>
+                        <div class="emaildetails detailsdiv">
+                            <label for="">Email:</label>
+                            <input type="email" class="emailinputdet"  placeholder="akinro.destined@gmail.com" required readonly>
+                        </div>
+                        <div class="phonedetails detailsdiv">
+                            <label for="">Phone:</label>
+                            <input type="number" class="numberinputdet" placeholder="08122334455" required readonly>
+                        </div>
+                        <div class="detailbuttons">
+                            <input type="button" value="Edit Contact" class="detbutton editdetails">
+                            <input type="button" value="CANCEL" class="detbutton canceldetails">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+    <script src="/main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
